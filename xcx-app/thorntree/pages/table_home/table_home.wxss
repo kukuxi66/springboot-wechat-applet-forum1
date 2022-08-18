@@ -1,0 +1,36 @@
+/* pages/table_home/table_home.wxss */
+.home_box_card{
+    width: 700rpx;
+    height: 500rpx;
+    border-radius: 10rpx;
+    background-color: white;
+    margin: 20rpx auto 60rpx auto;
+    overflow: hidden;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+}
+.home_img_box{
+    border-radius: 10rpx;
+}
+.home_img_box>image{
+    width: 700rpx;
+    height: 300rpx;
+}
+.home_card_title{
+    margin-left: 50rpx;
+    line-height: 170rpx;
+    font-size: 35rpx;
+}
+.home_card_icon{
+    font-size: 70rpx;
+    float:right;
+    margin:50rpx 30rpx 0 0;
+}
+.home_card_time{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: rgb(125, 125, 125);
+}
+.home_box{
+    margin-top: 20rpx;
+}

@@ -1,0 +1,32 @@
+<!--pages/table_add_com/table_add_com.wxml-->
+<van-nav-bar title="发帖" fixed placeholder />
+<view class="add_com_box_class add_com_box">
+    <van-radio-group value="{{ radio }}" bind:change="onChange">
+        <van-cell title="爱情" clickable data-name="1" bind:click="onClick">
+            <van-radio slot="right-icon" name="1" />
+        </van-cell>
+        <van-cell title="友情" clickable data-name="2" bind:click="onClick">
+            <van-radio slot="right-icon" name="2" />
+        </van-cell>
+        <van-cell title="亲情" clickable data-name="3" bind:click="onClick">
+            <van-radio slot="right-icon" name="3" />
+        </van-cell>
+    </van-radio-group>
+</view>
+<view class="add_com_box_title add_com_box">
+    <van-field model:value="{{ add_com_box_title }}" label="标题" left-icon="font-o" placeholder="请输入标题" />
+</view>
+<view class="add_com_box_text_box add_com_box" style="height: 100%;">
+    <textarea model:value="{{ add_com_box_texts }}" maxlength="600" class="add_com_box_text" placeholder="请输入内容"></textarea>
+    <van-divider customStyle="width:90%; border-color: #896894; font-size: 18px;margin: 0 auto;">
+    </van-divider>
+    <view class="add_com_upload">
+        <van-uploader file-list="{{ fileList }}" max-count="9" deletable="{{ true }}" preview-size="200rpx" accept="media" bind:delete="dele_img" use-before-read bind:before-read="beforeRead" bind:after-read="afterRead" />
+    </view>
+    
+</view>
+
+<view class="add_com_button_box">
+    <van-button block color="#896894" bindtap="verify_com" type="primary">发表帖子</van-button>
+</view>
+<van-toast id="van-toast" />

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcx.mapper.CommentMapper">
+    <update id="updateSawUp">
+
+        UPDATE xcx_comment SET saw=saw+1 WHERE commentId=#{commentId}
+
+    </update>
+    <update id="updateCommentLikesUp">
+
+        UPDATE xcx_comment SET likes=likes+1 WHERE commentId=#{commentId}
+
+    </update>
+    <update id="updateCommentLikesDown">
+
+        UPDATE xcx_comment SET likes=likes-1 WHERE commentId=#{commentId}
+
+    </update>
+    <update id="updateCommentsUp">
+
+        UPDATE xcx_comment SET comments=comments+1 WHERE commentId=#{commentId}
+
+    </update>
+
+
+    <select id="selectAllByCommentsAndUsers" resultType="com.xcx.dao.dto.CommentByPageDto">
+
+        SELECT * FROM xcx_comment,xcx_user
+        WHERE xcx_comment.userId= xcx_user.id
+        LIMIT #{page},10
+
+    </select>
+
+    <select id="selectCommentByCommentIdAndUsers" resultType="com.xcx.dao.dto.CommentByPageDto">
+
+        SELECT * FROM xcx_comment,xcx_user
+        WHERE xcx_comment.userId= xcx_user.id
+          AND xcx_comment.commentId=#{commentId}
+
+    </select>
+    <select id="selectLikesByCommentId" resultType="com.xcx.dao.dto.CommentLikesDto">
+
+        SELECT commentId,likes,comments FROM xcx_comment WHERE commentId=#{commentId}
+
+    </select>
+
+</mapper>

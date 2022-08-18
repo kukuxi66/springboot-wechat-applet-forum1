@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcx.mapper.CommentCategoryMapper">
+
+
+    <select id="selectCategoryByCommentsAndUsers" resultType="com.xcx.dao.dto.CommentCategoryByPageDto">
+
+            SELECT * FROM xcx_comment,xcx_user,xcx_comment_category
+            WHERE xcx_comment.userId= xcx_user.id
+                AND xcx_comment_category.commentCategoryName=#{commentCategoryName}
+                AND xcx_comment_category.commentCategoryId=xcx_comment.commentCategoryId
+                LIMIT #{page},10
+
+    </select>
+    <select id="selectCategoryIdByCategoryName" resultType="java.lang.Integer">
+
+        SELECT commentCategoryId FROM xcx_comment_category WHERE commentCategoryName=#{commentCategoryName}
+
+    </select>
+
+</mapper>

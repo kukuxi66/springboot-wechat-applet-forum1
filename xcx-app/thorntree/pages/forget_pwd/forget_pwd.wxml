@@ -1,0 +1,62 @@
+<!--pages/forget_pwd/forget_pwd.wxml-->
+<van-nav-bar left-text="首页" left-arrow bind:click-left="onClickLeft" />
+<!--pages/login/login.wxml-->
+<view class="backdrop">
+</view>
+<van-toast id="van-toast" />
+<van-notify safeAreaInsetTop="true" id="van-notify" />
+<view class="login_card">
+    <view style="width: 600rpx;margin: 50rpx auto 0 auto">
+        <view class="login_title">
+            <text>修改密码</text>
+        </view>
+        <view class="login_input">
+            <van-cell-group>
+                <van-field password model:value="{{ userpwd1 }}" 
+                error="{{userpwd1_err}}"
+                bind:input="verify_pwd"
+                maxlength= "16"
+                left-icon="edit" placeholder="请输入含英文8-16位密码" />
+            </van-cell-group>
+        </view>
+        <view class="login_input">
+            <van-cell-group>
+                <van-field password model:value="{{ userpwd2 }}" 
+                error="{{userpwd2_err}}"
+                bind:blur="verify_pwd2"
+                maxlength= "16"
+                error-message="{{userpwd2_msg_err}}"
+                left-icon="edit" placeholder="请再输入密码" />
+            </van-cell-group>
+        </view>
+        <view class="login_input">
+            <van-cell-group>
+                <van-field  model:value="{{ e_mail }}"
+                error="{{e_mail_err}}" 
+                bind:input="verify_email"
+                left-icon="envelop-o" placeholder="请输入邮箱" />
+            </van-cell-group>
+        </view>
+        <view style="display: flex;">
+            <view class="login_input" style="width: 330rpx;">
+                <van-cell-group>
+                    <van-field  model:value="{{ verify }}" 
+                    error="{{verify_err}}"
+                    bind:input="verify_ver"
+                    maxlength= "6"
+                    left-icon="clock-o" placeholder="请输入验证码" />
+                </van-cell-group>
+            </view>
+            <view style="margin-top: 55rpx;margin-left: 60rpx;">
+                <van-button disabled="{{disabled}}" round bindtap="get_verify_nub" color="#896894" custom-class="verify_btn">{{codename}}</van-button>
+            </view>
+        </view>
+    </view>
+
+</view>
+<view class="login_button_box">
+    <!-- <van-button style="border-radius: 30rpx;width: 100%;" type="info">圆形按钮</van-button> -->
+    <button bindtap="verify_forget" hover-class="login_button-hover" id="login_button">
+        修改
+    </button>
+</view>

@@ -1,0 +1,104 @@
+<!--pages/table_community/table_community.wxml-->
+<van-nav-bar title="帖子" fixed placeholder custom-style="height:110rpx">
+</van-nav-bar>
+<!-- <van-nav-bar fixed placeholder custom-style="height:110rpx">
+    <view slot="left">
+        <van-search sticky value="{{value }}" placeholder="请输入搜索关键词" />
+    </view>
+</van-nav-bar> -->
+
+<view>
+    <van-tabs bind:change="get_community_byClass" offset-top='80' sticky>
+        <van-tab title="全部">
+            <view class="com_card" wx:for="{{all_community}}" wx:for-index="index" wx:for-item="item" wx:key="index"
+            bindtap="go_com_item" data-comid="{{item.commentId}}">
+                <view style="display: flex;align-items: center;">
+                    <view style="margin: 20rpx 20rpx 0 40rpx;">
+                        <van-image round width="80rpx" height="80rpx" src="{{item.avatar}}" />
+                    </view>
+                    <view>
+                        <text class="com_name" style="height: 30rpx; display: block; box-sizing: border-box">{{item.username}}</text>
+                        <text class="com_time">{{item.commentTime}}</text>
+                    </view>
+                </view>
+                <view style="width: 615rpx;margin: 20rpx auto;">
+                    <view class="com_title">
+                        {{item.commentTitle}}
+                    </view>
+                    <view class="com_text">
+                        {{item.commentText}}
+                    </view>
+                    <view class="com_img">
+                        <view class="img_box" wx:for="{{item.commentAddress}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                            <image mode="aspectFill" src="{{item.commentAddress}}"></image>
+                        </view>
+                    </view>
+                </view>
+                <view style="display: flex;justify-content:center;">
+                    <view class="icon_box">
+                        <van-icon name="fire-o" />
+                        <text>{{item.saw}}</text>
+                    </view>
+                    <view class="icon_box">
+                        <van-icon name="comment-o" />
+                        <text>{{item.comments}}</text>
+                    </view>
+                    <view class="icon_box">
+                        <van-icon name="good-job-o" />
+                        <text>{{item.likes}}</text>
+                    </view>
+                </view>
+
+            </view>
+            <van-divider contentPosition="center">到底了哦</van-divider>
+            <!-- <van-divider  customStyle="border-color:rgb(125,125,125); font-size: 18rpx; width:80%;margin:0 auto"></van-divider> -->
+        </van-tab>
+        <van-tab wx:for="{{community_class}}" wx:for-item="item" wx:for-index="index" wx:key="index" title="{{item.commentCategoryName}}">
+            <view class="com_card" wx:for="{{community_byClass}}" wx:for-item="item" wx:for-index="index" wx:key="index"
+            bindtap="go_com_item" data-comid="{{item.commentId}}"  
+            >
+                <view style="display: flex;align-items: center;">
+                    <view style="margin: 20rpx 20rpx 0 40rpx;">
+                        <van-image round width="80rpx" height="80rpx" src="{{item.avatar}}" />
+                    </view>
+                    <view>
+                        <text class="com_name" style="height: 30rpx; display: block; box-sizing: border-box">{{item.username}}</text>
+                        <text class="com_time">{{item.commentTime}}</text>
+                    </view>
+                </view>
+                <view style="width: 615rpx;margin: 20rpx auto;">
+                    <view class="com_title">
+                        {{item.commentTitle}}
+                    </view>
+                    <view class="com_text">
+                        {{item.commentText}}
+                    </view>
+                    <view class="com_img">
+                        <view class="img_box" wx:for="{{item.commentAddress}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                            <image mode="aspectFill" src="{{item.commentAddress}}"></image>
+                        </view>
+                    </view>
+                </view>
+                <view style="display: flex;justify-content:center;">
+                    <view class="icon_box">
+                        <van-icon name="fire-o" />
+                        <text>{{item.saw}}</text>
+                    </view>
+                    <view class="icon_box">
+                        <van-icon name="comment-o" />
+                        <text>{{item.comments}}</text>
+                    </view>
+                    <view class="icon_box">
+                        <van-icon name="good-job-o" />
+                        <text>{{item.likes}}</text>
+                    </view>
+
+                </view>
+
+            </view>
+            <van-divider contentPosition="center">到底了哦</van-divider>
+        </van-tab>
+    </van-tabs>
+
+
+</view>

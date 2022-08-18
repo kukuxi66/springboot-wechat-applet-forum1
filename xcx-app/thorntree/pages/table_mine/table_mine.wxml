@@ -1,0 +1,28 @@
+<!--pages/table_mine/table_mine.wxml-->
+<van-nav-bar title="个人中心" fixed placeholder />
+<view>
+    <view class="backdrop">
+        <view class="avatar_box">
+            <image src="{{user_avatar}}">
+            </image>
+        </view>
+        <view class="name_box">
+            {{mine_username}}
+        </view>
+        <view class="email_box">
+            {{mine_email}}
+        </view>
+    </view>
+    <view>
+    </view>
+    <view>
+        <!-- <van-cell title="我的点赞" icon="like-o" is-link /> -->
+        <van-cell title="更改用户名" icon="user-o" is-link bindtap="go_revise_username" />
+        <van-cell title="绑定邮箱" icon="envelop-o" is-link bindtap="go_revise_email" />
+        <van-cell title="更改密码" icon="edit" is-link bindtap="go_revise_pwd" />
+        <van-cell title="更改头像" icon="user-circle-o" is-link bindtap="go_revise_header" />
+    </view>
+    <view class="add_com_button_box">
+        <van-button block color="#896894" bindtap="go_out" type="primary">退出登录</van-button>
+    </view>
+</view>

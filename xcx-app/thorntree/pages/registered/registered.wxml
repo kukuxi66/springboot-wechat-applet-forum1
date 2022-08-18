@@ -1,0 +1,49 @@
+<!--pages/registered/registered.wxml-->
+<van-nav-bar left-text="首页" left-arrow bind:click-left="onClickLeft" />
+<view class="backdrop">
+</view>
+<van-toast id="van-toast" />
+<van-notify safeAreaInsetTop="true" id="van-notify" />
+<view class="login_card">
+    <view style="width: 600rpx;margin: 50rpx auto 0 auto">
+        <view class="login_title">
+            <text>注册</text>
+        </view>
+        <view class="login_input">
+            <van-cell-group>
+                <van-field
+                  error="{{username_err}}"
+                  model:value="{{ username }}" left-icon="contact" 
+                  bind:input="verify_username"
+                  maxlength= "8"
+                  placeholder="请输入8位以下用户名" />
+            </van-cell-group>
+        </view>
+        <view class="login_input">
+            <van-cell-group>
+                <van-field password model:value="{{ userpwd1 }}" 
+                error="{{userpwd1_err}}"
+                bind:input="verify_pwd"
+                maxlength= "16"
+                left-icon="edit" placeholder="请输入含英文8-16位密码" />
+            </van-cell-group>
+        </view>
+        <view class="login_input">
+            <van-cell-group>
+                <van-field password model:value="{{ userpwd2 }}" 
+                error="{{userpwd2_err}}"
+                bind:blur="verify_pwd2"
+                maxlength= "16"
+                error-message="{{userpwd2_msg_err}}"
+                left-icon="edit" placeholder="请再输入密码" />
+            </van-cell-group>
+        </view>
+    </view>
+
+</view>
+<view class="login_button_box">
+    <!-- <van-button style="border-radius: 30rpx;width: 100%;" type="info">圆形按钮</van-button> -->
+    <button bindtap="verify_reg" hover-class="login_button-hover" id="login_button">
+        注册
+    </button>
+</view>

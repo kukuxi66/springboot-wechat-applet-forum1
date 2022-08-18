@@ -1,0 +1,55 @@
+/* pages/table_com_item/table_com_iem.wxss */
+.com_name{
+    display: block;
+    font-size: 30rpx;
+    margin-top: 15rpx;
+}
+.com_title{
+    font-size: 35rpx;
+    font-weight: bold;
+    color: rgb(59, 59, 59);
+    margin-bottom: 5rpx;
+}
+.com_time{
+    font-size: 25rpx;
+    color: rgb(150, 150, 150);
+
+}
+.com_img{
+    display: flex;
+    margin-top: 20rpx;
+    flex-wrap: wrap;
+}
+.com_text{
+    font-size: 30rpx;
+    word-break:break-all;
+}
+.com_card{
+    width:700rpx;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 6rpx 20rpx -6rpx rgb(230, 230, 230);
+    margin: 0 auto;
+    border-radius: 15rpx;
+    margin-top: 10rpx;
+}
+.img_box{
+   border-radius: 10rpx;
+   margin-left: 5rpx;
+   margin-bottom: 5rpx;
+
+}
+.img_box>image{
+    width: 200rpx;
+    height: 200rpx;
+}
+.icon_box{
+    font-size: 30rpx;
+    margin: 0 80rpx;
+    margin-bottom: 20rpx;
+}
+.icon_box1{
+    font-size: 30rpx;
+    margin: 0 80rpx;
+    margin-bottom: 20rpx;
+    display: flex;
+}

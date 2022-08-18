@@ -1,0 +1,37 @@
+/* pages/table_home_item/table_home_item.wxss */
+.home_item_img>image{
+    width: 100%;
+    height: 400rpx;
+}
+.home_item_title{
+    margin: 20rpx 30rpx 30rpx 30rpx;
+    font-size: 35rpx;
+    font-weight: 700;
+    letter-spacing: 2pt; 
+    
+}
+
+.home_item_text{
+    margin: 0 30rpx 30rpx 30rpx;
+    letter-spacing: 2pt;
+    line-height: 40rpx; 
+    text-indent: 50rpx;
+}
+.home_item_time{
+    text-align: right;
+    margin: 0 30rpx 0 0;
+}
+.home_item_icon{
+    margin: 20rpx auto 60rpx auto;
+    width: 650rpx;
+    justify-content: space-between;
+    display: flex;
+    font-size: 50rpx;
+}
+.home_item_icon>view>text{
+    font-size: 30rpx;
+}
+.like_icon{
+    display: flex;
+    align-items: center;
+}

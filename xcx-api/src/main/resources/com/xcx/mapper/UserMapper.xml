@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcx.mapper.UserMapper">
+
+
+    <update id="updateAvatar">
+
+        update xcx_user set avatar=#{avatar} where id=#{id}
+
+    </update>
+    <update id="updateEmailByUserId">
+
+        UPDATE xcx_user SET email=#{email} WHERE id=#{userId}
+
+    </update>
+    <select id="selecrEmailByUserId" resultType="com.xcx.dao.dto.EmailDto">
+
+        SELECT email FROM xcx_user WHERE id=#{userId}
+
+    </select>
+
+</mapper>

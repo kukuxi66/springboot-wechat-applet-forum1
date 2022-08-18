@@ -1,0 +1,84 @@
+<!--pages/table_com_item/table_com_iem.wxml-->
+<van-nav-bar title="评论" fixed placeholder left-text="返回" bind:click-left="onClickLeft" />
+<view class="com_card">
+
+    <view style="display: flex;align-items: center;">
+        <view style="margin: 20rpx 20rpx 0 40rpx;">
+            <!-- <van-image round width="80rpx" height="80rpx" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+            <van-image round width="80rpx" height="80rpx" src="{{img_Url}}{{com_item.userPortraitAddress}}" /> -->
+            <image style="width: 80rpx;height: 80rpx;border-radius: 50%;" src="{{com_item.userPortraitAddress}}"></image>
+        </view>
+        <view>
+            <text class="com_name" style="height: 30rpx; display: block; box-sizing: border-box">{{com_item.username}}</text>
+            <text class="com_time">{{com_item.commentTime}}</text>
+        </view>
+    </view>
+    <view style="width: 615rpx;margin: 20rpx auto;">
+        <view class="com_title">
+            {{com_item.commentTitle}}
+        </view>
+        <view class="com_text">
+            {{com_item.commentText}}
+        </view>
+        <view class="com_img">
+            <view class="img_box" wx:for="{{com_item.commentAddress}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                <image mode="aspectFill" src="{{img_Url+com_item.commentAddress[index].commentAddress}}"></image>
+            </view>
+        </view>
+    </view>
+    <view style="display: flex;justify-content:center;">
+        <view class="icon_box">
+            <van-icon name="fire-o" />
+            <text>{{com_item.saw}}</text>
+        </view>
+        <view class="icon_box">
+            <van-icon name="comment-o" />
+            <text>{{com_item.comments}}</text>
+        </view>
+        <view  wx:if="{{show == false}}" class="icon_box" bindtap="post_like">
+            <van-icon name="good-job-o" />
+            <text>{{com_item.likes}}</text>
+        </view>
+        <view wx:elif="{{show == true}}" class="icon_box1" bindtap="post_like">
+            <view style="color: red;">
+                <van-icon name="good-job-o" />
+            </view>
+            <text>{{com_item.likes}}</text>
+        </view>    
+    </view>
+
+</view>
+
+<view class="com_card" wx:for="{{com_item2}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <view style="display: flex;align-items: center;">
+        <view style="margin: 20rpx 20rpx 0 40rpx;">
+            <image style="width: 80rpx;height: 80rpx;border-radius: 50%;" src="{{item.userPortraitAddress}}"></image>
+        </view>
+        <view>
+            <text class="com_name" style="height: 30rpx; display: block; box-sizing: border-box">{{item.username}}</text>
+            <text class="com_time">{{item.commentSonDate}}</text>
+        </view>
+    </view>
+    <view style="width: 615rpx;margin: 20rpx auto;padding-bottom: 30rpx;">
+        <view class="com_text">
+            {{item.commentSonText}}
+        </view>
+    </view>
+</view>
+<van-divider contentPosition="center">{{com_prompt}}</van-divider>
+<view style="position: fixed;bottom: 0;width: 100%;float: left;">
+<van-cell-group>
+  <van-field
+    model:value="{{ com_remakr }}"
+    center
+    label="评论"
+    placeholder="发表评论"
+    border="{{ true }}"
+    use-button-slot
+  >
+    <van-button color="#896894" slot="button" bindtap="post_com_remakr" size="small" type="primary">
+      发送
+    </van-button>
+  </van-field>
+</van-cell-group>
+</view>

@@ -1,0 +1,24 @@
+<!--pages/revise_header/revise_header.wxml-->
+<van-nav-bar title="更换头像" fixed placeholder left-text="返回" bind:click-left="onClickLeft" />
+<view class="backdrop">
+</view>
+<van-toast id="van-toast" />
+<van-notify safeAreaInsetTop="true" id="van-notify" />
+<view class="login_card">
+    <view style="width: 600rpx;margin: 50rpx auto 0 auto">
+        <view class="login_title">
+            <text>更改头像</text>
+        </view>
+        <view style="width: 300rpx;margin: 60rpx auto;">
+            <view class="add_com_upload">
+                <van-uploader file-list="{{ fileList }}" max-count="1" deletable="{{ true }}" preview-size="300rpx" accept="media" bind:delete="dele_img" use-before-read bind:before-read="beforeRead" bind:after-read="afterRead" />
+            </view>
+        </view>
+    </view>
+</view>
+<view class="login_button_box">
+    <!-- <van-button style="border-radius: 30rpx;width: 100%;" type="info">圆形按钮</van-button> -->
+    <button bindtap="revise_header" hover-class="login_button-hover" id="login_button">
+        修改
+    </button>
+</view>

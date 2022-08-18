@@ -1,0 +1,58 @@
+/* pages/forget_pwd/forget_pwd.wxss */
+/* pages/registered/registered.wxss */
+.backdrop {
+    width: 100%rpx;
+    height: 400rpx;
+    background: linear-gradient(to bottom left, #896894, #976178);
+}
+
+.login_card {
+
+    height: 800rpx;
+    width: 700rpx;
+    background-color: white;
+    position: absolute;
+    top: 300rpx;
+    left: 25rpx;
+    border-radius: 30rpx;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.login_input {
+    margin-top: 50rpx;
+    border: #896894 solid 3rpx;
+}
+
+.login_title {
+    color: #896894;
+    font-weight: 700;
+    text-align: center;
+    font-size: 60rpx;
+    font-family: 幼圆;
+    letter-spacing: 15rpx;
+}
+
+.login_button_box {
+    width: 600rpx;
+    margin: 600rpx auto 0 auto;
+}
+
+#login_button {
+    background: linear-gradient(to bottom left, #896894, #976178);
+    height: 100rpx;
+    line-height: 100rpx;
+    color: white;
+    border-radius: 70rpx;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.login_button-hover {
+    background: linear-gradient(to bottom left, #8e7696, #966d7e) !important;
+    position: relative;
+    top: 5rpx;
+}
+.verify_btn{
+    width: 170rpx;
+    white-space: nowrap;
+}

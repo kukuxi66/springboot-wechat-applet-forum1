@@ -1,0 +1,20 @@
+<!--pages/revise_username/revise_username.wxml-->
+<van-nav-bar title="修改用户名" fixed placeholder left-text="返回" bind:click-left="onClickLeft" />
+<view class="backdrop">
+</view>
+<van-toast id="van-toast" />
+<view class="login_card">
+    <view style="width: 600rpx;margin: 50rpx auto 0 auto">
+        <view class="login_title">
+            <text>修改用户名</text>
+        </view>
+        <view class="login_input">
+            <van-cell-group>
+                <van-field model:value="{{ username }}" maxlength="8" left-icon="contact" placeholder="请输入用户名" />
+            </van-cell-group>
+        </view>
+    </view>
+</view>
+<view class="login_button_box">
+    <button hover-class="login_button-hover" id="login_button" bindtap="revise_username">修改</button>
+</view>

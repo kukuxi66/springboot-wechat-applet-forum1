@@ -1,0 +1,33 @@
+<!--pages/table_home_item/table_home_item.wxml-->
+<van-nav-bar title="文章" fixed placeholder left-text="返回" bind:click-left="onClickLeft" />
+<view>
+    
+    <view class="home_item_img">
+        <image mode="aspectFill" src="{{img_Url+com_item[0].articleAddress}}"></image>
+    </view>
+    <view class="home_item_icon">
+        <view>
+            <van-icon name="fire-o" /><text>{{com_item[0].saw}}</text>
+        </view> 
+        <view wx:if="{{show == false}}" bindtap="post_like">
+            <van-icon name="flower-o" /><text>{{com_item[0].likes}}</text>
+        </view>
+        <view class="like_icon"  wx:elif="{{show == true}}" bindtap="post_like">
+            <view style="color: red;">
+                <van-icon name="flower-o" />
+            </view>
+            <view>
+                <text>{{com_item[0].likes}}</text>
+            </view> 
+        </view>
+    </view>
+    <view class="home_item_title">
+        {{com_item[0].articleTitle}}
+    </view>
+    <view class="home_item_text">
+        {{com_item[0].articleText}}
+    </view>
+    <view class="home_item_time">
+        {{com_item[0].articleTime}}
+    </view>
+</view>

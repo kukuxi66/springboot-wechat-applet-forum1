@@ -1,0 +1,17 @@
+<!--pages/table_home/table_home.wxml-->
+<van-nav-bar title="文章" fixed placeholder />
+<view class="home_box">
+    <view wx:for="{{all_text}}" wx:for-index="index" wx:for-item="item"  wx:key="index" bindtap="go_home_item" data-comid="{{item.articleId}}">
+        <text class="home_card_time">{{item.articleTime}}</text>
+        <view class="home_box_card">
+            <view class="home_img_box">
+                <image mode="aspectFill" src="{{img_Url+item.articleAddress}}"></image>
+            </view>
+            <view class="home_card_title_box">
+                <text class="home_card_title">{{item.articleTitle}}</text>
+                <van-icon class="home_card_icon" name="flower-o" />
+            </view>
+        </view>
+    </view>
+    <van-divider contentPosition="center">到底了哦</van-divider>
+</view>

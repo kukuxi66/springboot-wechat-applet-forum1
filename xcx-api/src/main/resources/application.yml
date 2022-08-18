@@ -1,0 +1,27 @@
+server:
+  port: 8085
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: admin
+    url: jdbc:mysql://localhost:3306/xcx
+  redis:
+    port: 6379
+    host: localhost
+  servlet:
+    multipart:
+      max-request-size: 20MB
+      max-file-size: 2MB
+  mail:
+    host: smtp.qq.com
+    username: 2936293625@qq.com
+    password: vqolhinmdbdxdfjg
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: xcx_
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,0 +1,79 @@
+{
+    "pages": [
+        "pages/login/login",
+        "pages/table_home/table_home",
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/table_mine/table_mine",
+        "pages/registered/registered",
+        "pages/table_community/table_community",
+        "pages/forget_pwd/forget_pwd",
+        "pages/table_add_com/table_add_com",
+        "pages/table_home_item/table_home_item",
+        "pages/table_com_item/table_com_item",
+        "pages/revise_email/revise_email",
+        "pages/revise_header/revise_header",
+        "pages/revise_pwd/revise_pwd",
+        "pages/revise_username/revise_username"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": true
+    },
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+        "van-button": "@vant/weapp/button/index",
+        "van-tabbar": "@vant/weapp/tabbar/index",
+        "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+        "van-image": "@vant/weapp/image/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-search": "@vant/weapp/search/index",
+        "van-tab": "@vant/weapp/tab/index",
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-nav-bar": "@vant/weapp/nav-bar/index",
+        "van-field": "@vant/weapp/field/index",
+        "van-notify": "@vant/weapp/notify/index",
+        "van-toast": "@vant/weapp/toast/index",
+        "van-divider": "@vant/weapp/divider/index",
+        "van-picker": "@vant/weapp/picker/index",
+        "van-radio": "@vant/weapp/radio/index",
+        "van-radio-group": "@vant/weapp/radio-group/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-uploader": "@vant/weapp/uploader/index",
+        "van-empty": "@vant/weapp/empty/index"
+    },
+    "tabBar": {
+        "selectedColor": "#90A9F2",
+        "list": [
+            {
+                "pagePath": "pages/table_home/table_home",
+                "text": "首页",
+                "iconPath": "/pages/img/home1.png",
+                "selectedIconPath": "/pages/img/home.png"
+            },
+            {
+                "pagePath": "pages/table_community/table_community",
+                "text": "帖子",
+                "iconPath": "/pages/img/comm1.png",
+                "selectedIconPath": "/pages/img/comm.png"
+            },
+            {
+                "pagePath": "pages/table_add_com/table_add_com",
+                "text": "发帖",
+                "iconPath": "/pages/img/add1.png",
+                "selectedIconPath": "/pages/img/add.png"
+            },
+            {
+                "pagePath": "pages/table_mine/table_mine",
+                "text": "我的",
+                "iconPath": "/pages/img/mine1.png",
+                "selectedIconPath": "/pages/img/mine.png"
+            }
+        ]
+    }
+}

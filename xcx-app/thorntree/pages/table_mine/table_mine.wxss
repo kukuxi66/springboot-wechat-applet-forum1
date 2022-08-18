@@ -1,0 +1,31 @@
+/* pages/table_mine/table_mine.wxss */
+.backdrop {
+    width: 100%rpx;
+    height: 600rpx;
+    background: linear-gradient(to bottom left, #896894, #976178);
+}
+.avatar_box>image{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+}
+.avatar_box{
+    padding-top: 100rpx;
+    width: 200rpx;
+    height: 200rpx;
+    margin: 0 auto;
+}
+.add_com_button_box{
+    width: 650rpx;
+    margin: 50rpx auto;
+}
+.name_box{
+    color: white;
+    margin-top: 30rpx;
+    text-align: center;
+}
+.email_box{
+    color: white;
+    margin-top: 30rpx;
+    text-align: center;
+}
